@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app_test/widgets/destination_carousel.dart';
+import 'package:travel_app_test/widgets/hotel_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  int _currentTab = 0;
 
   List<IconData> _icons = [
     FontAwesomeIcons.plane,
@@ -81,8 +83,42 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             DestinationCarousel(),
+            SizedBox(height: 20),
+            HotelCarousel(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentTab,
+        onTap: (int index) {
+          setState(() {
+            _currentTab = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              size: 30,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.local_pizza,
+              size: 30,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: CircleAvatar(
+              radius: 15,
+              backgroundImage: NetworkImage(
+                  'https://avatars1.githubusercontent.com/u/31356058?s=400&u=a06cb8956011df2f5a2a2acd0ae94b4eeeaf5f95&v=4'),
+            ),
+            label: '',
+          ),
+        ],
       ),
     );
   }
