@@ -17,7 +17,7 @@ class DestinationCarousel extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 1.5),
+                    letterSpacing: 0.5),
               ),
               GestureDetector(
                 // see all action here
@@ -49,7 +49,7 @@ class DestinationCarousel extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   children: <Widget>[
                     Positioned(
-                      bottom: 15.0,
+                      bottom: 5.0,
                       child: Container(
                         height: 120,
                         width: 200,
@@ -68,7 +68,7 @@ class DestinationCarousel extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 22.0,
                                   fontWeight: FontWeight.w600,
-                                  letterSpacing: 1.2,
+                                  letterSpacing: 0.5,
                                 ),
                               ),
                               Text(
